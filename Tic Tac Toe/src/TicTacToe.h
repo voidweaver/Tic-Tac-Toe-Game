@@ -3,13 +3,17 @@
 class TicTacToe {
 
 private:
-	std::string player_name;
+	int round;
 	std::string winner;
-	int size;
-	int* board;
+	std::string player1_name;
+	std::string player2_name;
+	int board_size;
+	char* board;
 
 public:
 	TicTacToe(int board_size);
 	~TicTacToe();
+	void start();
+
 
 };

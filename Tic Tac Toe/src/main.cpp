@@ -22,7 +22,6 @@ int main() {
 	}
 
 	// getting player
-	Player player1, player2;
 
 	std::cout << "Enter the name of Player #1 >> ";
 	std::string* input = new std::string;
