@@ -5,8 +5,9 @@ bool inlimit(int since, int until, int input);
 class TicTacToe {
 
 private:
-	int round;
 	int board_size;
+	int board_area;
+	int last_answer;
 	char* tile;
 	std::string winner;
 	std::string player1_name;
@@ -21,6 +22,8 @@ public:
 	void setPlayer2_name(std::string name);
 	
 	void start();
+	void run();
+	void drawboard();
 	void checkwin();
 	void gameover();
 

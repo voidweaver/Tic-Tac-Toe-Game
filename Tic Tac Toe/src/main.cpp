@@ -8,21 +8,20 @@
 
 int main() {
 
-	
-	
-	
+	int board_size;
+	std::cout << "Please enter board size >> ";
+	std::cin >> board_size;
 
-	// getting player
-
+	TicTacToe game(board_size);
 	
-
-	std::cout << std::endl;
-	
+	game.start();
 	// Game Loop
-	bool shouldEnd = false; // don't forget to change back to true
+	bool end = false; // don't forget to change back to true
+
+	game.run();
 
 
-	for (int game = 1; game <= roundAmount; game++) {
+	/*while (!checkwin) {
 		char input;
 		system("cls");
 		DrawBoard();
@@ -34,7 +33,7 @@ int main() {
 
 
 		checkwin();
-	}
+	}*/
 
 
 	std::cin.ignore();
