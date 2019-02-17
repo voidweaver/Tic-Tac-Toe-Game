@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <conio.h>
 #include "TicTacToe.h"
 #include "board.h"
 
@@ -8,17 +7,24 @@
 
 int main() {
 
-	int board_size;
-	std::cout << "Please enter board size >> ";
-	std::cin >> board_size;
+	for (int i = 0; i < 80; i++)
+		std::cout << "-";
+	std::cout << "Copyright 2019 Krissada Singhakachain.  All rights reserved." << std::endl;
+	for (int i = 0; i < 80; i++)
+		std::cout << "-";
+	std::cout << std::endl;
 
-	TicTacToe game(board_size);
+	std::cout << "Welcome to Tic-Tac-Toe Game(aka O-X Game) by Omsin" << std::endl << std::endl;
+
+	int board_width;
+	std::cout << "Please enter board width >> ";
+	std::cin >> board_width;
+
+	TicTacToe game(board_width);
 	
 	game.start();
-	// Game Loop
-	bool end = false; // don't forget to change back to true
-
 	game.run();
+	game.summary();
 
 
 	/*while (!checkwin) {
@@ -36,6 +42,6 @@ int main() {
 	}*/
 
 
-	std::cin.ignore();
+	system("pause");
 	return 0;
 }
