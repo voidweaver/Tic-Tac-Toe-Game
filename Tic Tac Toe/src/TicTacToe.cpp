@@ -146,7 +146,6 @@ void TicTacToe::checkwin()
 		for (int j = 0; j < board_width && !havewin; j++) {
 
 			if (tile_raw[i][j] != 'O') { // Horizontal
-				break;
 				th = 0;
 			}
 			else if (th == board_width - 1) {
@@ -157,7 +156,6 @@ void TicTacToe::checkwin()
 			else th++;
 
 			if (tile_raw[j][i] != 'O') { // Vertical
-				break;
 				tv = 0;
 			}
 			else if (tv == board_width - 1) {
@@ -167,28 +165,64 @@ void TicTacToe::checkwin()
 			}
 			else tv++;
 
-			if (tile_raw[i][i] != 'O') { // Diagonal
-				break;
-				td = 0;
+
+
+		}
+		if (tile_raw[i][i] != 'O') { // Diagonal
+			td = 0;
+		}
+		else if (td == board_width - 1) {
+			havewin = true;
+			winner = player1_name;
+			end = true;
+		}
+		else td++;
+	}
+
+	for (int i = 0; i < board_width && !havewin; i++) { // For player 2
+		for (int j = 0; j < board_width && !havewin; j++) {
+
+			if (tile_raw[i][j] != 'X') { // Horizontal
+				th = 0;
 			}
-			else if (td == board_width - 1) {
+			else if (th == board_width - 1) {
 				havewin = true;
-				winner = player1_name;
+				winner = player2_name;
 				end = true;
 			}
-			else td++;
+			else th++;
+
+			if (tile_raw[j][i] != 'X') { // Vertical
+				tv = 0;
+			}
+			else if (tv == board_width - 1) {
+				havewin = true;
+				winner = player2_name;
+				end = true;
+			}
+			else tv++;
+
 
 
 		}
-	}
-	for (int i = 0; i < board_width; i++) { // For player 2
-		for (int j = 0; j < board_width; j++) {
-
+		if (tile_raw[i][i] != 'X') { // Diagonal
+			td = 0;
 		}
+		else if (td == board_width - 1) {
+			havewin = true;
+			winner = player2_name;
+			end = true;
+		}
+		else td++;
 	}
 }
 
 void TicTacToe::summary()
 {
-	std::cout << "Winner : " << winner;
+	if (winner != "NULL") {
+		std::cout << "Winner : " << winner << " !";
+	}
+	else {
+		std::cout << "DRAW !";
+	}
 }
