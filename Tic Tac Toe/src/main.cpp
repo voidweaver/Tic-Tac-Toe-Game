@@ -9,7 +9,7 @@ int main() {
 
 	for (int i = 0; i < 80; i++)
 		std::cout << "-";
-	std::cout << "Copyright 2019 Krissada Singhakachain.  All rights reserved." << std::endl;
+	std::cout << "Copyright (c) 2019 Krissada Singhakachain.  All rights reserved." << std::endl;
 	for (int i = 0; i < 80; i++)
 		std::cout << "-";
 	std::cout << std::endl;
@@ -41,7 +41,7 @@ int main() {
 		checkwin();
 	}*/
 
-
+	std::cout << std::endl << std::endl;
 	system("pause");
 	return 0;
 }
