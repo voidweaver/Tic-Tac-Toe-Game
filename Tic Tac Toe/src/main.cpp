@@ -7,10 +7,13 @@
 
 int main() {
 
-	for (int i = 0; i < 80; i++)
+	system("title Tic Tac Toe by Omsin");
+	system("mode 200");
+	for (int i = 0; i < 200; i++)
 		std::cout << "-";
-	std::cout << "Copyright (c) 2019 Krissada Singhakachain.  All rights reserved." << std::endl;
-	for (int i = 0; i < 80; i++)
+	std::cout << "Copyright (c) 2019 Krissada Singhakachain.  All rights reserved." << std::endl << std::endl;
+	std::cout << "source code is available at https://omsinkrissada.github.io/Tic-Tac-Toe-Game/" << std::endl;
+	for (int i = 0; i < 200; i++)
 		std::cout << "-";
 	std::cout << std::endl;
 
