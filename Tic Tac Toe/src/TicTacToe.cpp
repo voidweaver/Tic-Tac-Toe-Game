@@ -111,7 +111,7 @@ void TicTacToe::run()
 				std::cin >> last_answer;
 				currentrow = (last_answer - 1) / board_width;
 				currentcolumn = (last_answer - 1) % board_width;
-				if (!(tile_raw[(last_answer - 1) / board_width][(last_answer - 1) % board_width] != '\0' && last_answer != 0))
+				if (tile_raw[(last_answer - 1) / board_width][(last_answer - 1) % board_width] = '\0' || last_answer == 0)
 					pass = true;
 
 			}
