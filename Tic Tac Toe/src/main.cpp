@@ -12,10 +12,15 @@ int main() {
 	for (int i = 0; i < 200; i++)
 		std::cout << "-";
 	std::cout << "Copyright (c) 2019 Krissada Singhakachain.  All rights reserved." << std::endl << std::endl;
-	std::cout << "source code is available at https://omsinkrissada.github.io/Tic-Tac-Toe-Game/" << std::endl;
+	std::cout << "source code is available at https://omsinkrissada.github.io/" << std::endl;
+	std::cout << "\nInstructions:" << std::endl;
+	std::cout << "	1. Board size can be between 2-100" << std::endl;
+	std::cout << "	2. Answer \"0\" to toggle the display grid between 'grid number' and 'blank'" << std::endl;
 	for (int i = 0; i < 200; i++)
 		std::cout << "-";
 	std::cout << std::endl;
+	system("pause");
+	system("cls");
 
 	std::cout << "Welcome to Tic-Tac-Toe Game(aka O-X Game) by Omsin" << std::endl << std::endl;
 

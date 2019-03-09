@@ -82,47 +82,34 @@ void TicTacToe::start()
 
 void TicTacToe::run()
 {
+	std::string ask_message = "Answer";
 	while (!end) {
 		std::cout << std::endl << "O : " << player1_name << std::endl << "X : " << player2_name << std::endl << std::endl;
-		std::cout << "Current turn : " << (round % 2 ? player1_name : player2_name) << std::endl << std::endl;
 		drawboard();
-		std::cout << "Answer >";
+		std::cout << "Current turn : " << (round % 2 ? player1_name : player2_name) << (round % 2 ? " [O]" : " [X]")  << std::endl << std::endl;
+		std::cout << ask_message << " >";
 		std::cin >> last_answer;
-		if (last_answer == 0) {
-			toggle(hide);
-			system("cls");
-			continue;
-		}
 		currentrow = (last_answer - 1) / board_width;
 		currentcolumn = (last_answer - 1) % board_width;
-		bool pass = false;
-		while (!pass) {
-			if (!inlimit(0, board_area, last_answer)) {
-				std::cout << "Answer out of length, please try again >>";
-				std::cin >> last_answer;
-				currentrow = (last_answer - 1) / board_width;
-				currentcolumn = (last_answer - 1) % board_width;
-				if (inlimit(0, board_area, last_answer))
-					pass = true;
-
-			}
-			else if (tile_raw[(last_answer - 1) / board_width][(last_answer - 1) % board_width] != '\0' && last_answer != 0) {
-				std::cout << "Tile already reserved, please try again >>";
-				std::cin >> last_answer;
-				currentrow = (last_answer - 1) / board_width;
-				currentcolumn = (last_answer - 1) % board_width;
-				if (tile_raw[(last_answer - 1) / board_width][(last_answer - 1) % board_width] = '\0' || last_answer == 0)
-					pass = true;
-
-			}
-		}
 		if (last_answer == 0) {
 			toggle(hide);
 			system("cls");
+			ask_message = "Answer";
 			continue;
 		}
-		tile_raw[(last_answer - 1) / board_width][(last_answer - 1) % board_width] = (round % 2 ? 'O' : 'X');
-		round++;
+		else if (!inlimit(0, board_area, last_answer)) {
+			ask_message = "Tile not found, please retry";
+		}
+		else if (tile_raw[(last_answer - 1) / board_width][(last_answer - 1) % board_width] != '\0' && last_answer != 0) {
+			ask_message = "Tile not empty, please retry";
+		}
+		else { // Pass
+			ask_message = "Answer";
+			tile_raw[(last_answer - 1) / board_width][(last_answer - 1) % board_width] = (round % 2 ? 'O' : 'X');
+			round++;
+		}
+
+		
 
 		checkwin();
 		system("cls");
@@ -263,7 +250,7 @@ void TicTacToe::summary()
 	drawboard();
 	std::cout << std::endl;
 	if (winner != "NULL") {
-		std::cout << "Winner : " << winner << " !";
+		std::cout << "Winner : " << (winner == player1_name ? player1_name : player2_name) << (winner == player1_name ? " [O]" : " [X]") << " !";
 	}
 	else {
 		std::cout << "DRAW !";
