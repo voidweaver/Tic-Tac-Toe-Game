@@ -79,8 +79,7 @@ class TicTacToe {
     drawWinLine() {
         var m = 6;
         strokeWeight(3);
-        if (this.winner == 2) stroke(0, 0, 255);
-        else stroke(255, 0, 0);
+        stroke(0);
         switch (this.win_type) {
             case 2: //horizontal
                 line(this.tile_width / m, this.win_at * this.tile_width + this.tile_width / 2, this.board_width * this.tile_width - this.tile_width / m, this.win_at * this.tile_width + this.tile_width / 2);
