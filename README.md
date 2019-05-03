@@ -1,7 +1,10 @@
 # Tic-Tac-Toe-Game
 
-My FIRST console game ever!
+Forked from **[Tic-Tac-Toe-Game](https://github.com/OmsinKrissada/Tic-Tac-Toe-Game)** by **[OmsinKrissada](https://github.com/OmsinKrissada)**
 
-aka O - X Game, but now with customisable board size!
+## What's new?
+  - Added user interface
+  - Added user interface
+  - Added user interface
 
-This project is made using Visual Studio 2017 Community
+### This repository is currently online [here](https://voidweaver.github.io/Tic-Tac-Toe-Game/)
