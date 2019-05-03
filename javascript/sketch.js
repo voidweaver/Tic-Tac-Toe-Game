@@ -10,7 +10,7 @@ function setup() {
     reset = select("#restart");
     reset.mousePressed(init);
 
-    let margins = 122
+    let margins = 126;
 
     less = windowWidth > windowHeight ? windowHeight - margins : windowWidth - margins;
     createCanvas(less, less);
