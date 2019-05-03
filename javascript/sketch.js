@@ -25,6 +25,8 @@ function draw() {
 
     if (game != null) {
         game.drawboard();
+        if(mouseX < width && mouseY < height && mouseX > 0 && mouseY > 0)
+            game.drawFaded(mouseX, mouseY);
         game.checkWin();
     }
 }

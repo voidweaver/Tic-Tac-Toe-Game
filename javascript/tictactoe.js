@@ -72,13 +72,38 @@ class TicTacToe {
     }
 
     drawO(x, y, radius) {
+        noFill();
         //ellipse(x - radius, y - radius, radius * 2, radius * 2);
         ellipse(x, y, radius * 2, radius * 2);
     }
 
+    drawFaded(mX, mY) {
+        var i = null;
+        var j = null;
+        for (let k = 1; k <= this.board_width; k++) {
+            if (i == null && mX < this.tile_width * k) {
+                i = k - 1;
+            }
+            if (j == null && mY < this.tile_width * k) {
+                j = k - 1;
+            }
+        }
+        if (i != null && j != null && this.winner == null) {
+            if (this.round % 2 == 0 && this.tile_raw[i][j] == null) {
+                strokeWeight(2);
+                stroke(255, 182, 182);
+                this.drawCross(this.tile_width * i + this.tile_width / 2, this.tile_width * j + this.tile_width / 2, this.tile_width / 4);
+            } else if (this.round % 2 == 1 && this.tile_raw[i][j] == null) {
+                strokeWeight(2);
+                stroke(182, 182, 255);
+                this.drawO(this.tile_width * i + this.tile_width / 2, this.tile_width * j + this.tile_width / 2, this.tile_width / 4);
+            }
+        }
+    }
+
     drawWinLine() {
         var m = 6;
-        strokeWeight(3);
+        strokeWeight(4);
         stroke(0);
         switch (this.win_type) {
             case 2: //horizontal
